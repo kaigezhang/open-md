@@ -1,0 +1,292 @@
+@charset "utf-8";
+/* CSS Document */
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Open Sans',sans-serif;
+}
+
+body {
+  font-weight: 200;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+section {
+  position: relative;
+}
+#intro {
+	background-size:cover;
+}
+.ban-text-middle > h1 {
+font-size: 60px;
+}
+.clear-inner-space {
+  padding: 0px !important;
+}
+
+
+.container-fluid {
+  clear: both;
+  float: none;
+  width: 100%;
+}
+
+.nav > li > a {
+  font-weight: 600;
+}
+
+.fixed-list {
+  background: #F4F4F4;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px rgba(142, 142, 142, 0.5);
+  position: fixed;
+  right: 12px;
+  top: 12px;
+  z-index: 100;
+}
+
+.col-lg-8.port-desc-wrap {
+  color: #737373;
+  font-size: 16px;
+}
+
+
+
+section {
+  background: linear-gradient(to bottom, #627d4d 0%,#1f3b08 100%);
+ /* W3C */
+  background-attachment: fixed;
+}
+
+#intro {
+  background-image: url("../img/banner.jpg");
+  transition: all 0.1s ease-in 0s;
+  z-index: 11;
+}
+
+
+
+.banner-main {
+  height: 100%;
+  position: relative;
+}
+
+.banner-main .ban-text-middle {
+  bottom: 0;
+  color: #FFFFFF;
+  font-weight: bold;
+  height: 251px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.37);
+  top: 0;
+}
+
+.ban-btn {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid;
+    border-radius: 0;
+    color: #F17C2F;
+    font-weight: 600;
+    min-width: 115px;
+    padding: 6px 12px;
+}
+
+.ban-text-middle > h1 {
+  margin-bottom: 26px;
+}
+
+.ban-text-middle p {
+  margin-bottom: 20px;
+  padding: 12px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.ban-btn:hover {
+  background: #0092aa;
+  border-color:#0092aa;
+  color: #FFFFFF;
+}
+
+
+/*--mobile----------*/
+@media(max-width:1100px){
+	.footer-last > .row > div {
+		width: auto;
+	}
+	.footer-last > .row > div:last-child{
+		float:right;
+	}
+}
+
+@media(min-width:767px) and (max-width:980px) {
+  
+
+  #intro {
+    background-image: url("../img/banner.jpg");
+  }
+
+  
+}
+
+@media(max-width:766px) {
+  .client-logo-main .col-lg-3 {
+    height: 100px;
+  }
+
+  .ms-logo {
+    float: left;
+  }
+
+  .toggle-big-left {
+    float: right;
+  }
+
+  .ban-text-middle h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+
+
+  .second {
+    display: none;
+  }
+
+
+
+  .ban-text-middle p {
+    margin-bottom: 6px;
+  }
+
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background: none;
+  }
+
+  .navbar-default .navbar-toggle {
+    border-width: 0px;
+    margin-top: 24px;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    height: auto;
+    margin: 0;
+    padding: 12px;
+    width: 100%;
+  }
+
+  .nav li a i {
+    display: none;
+  }
+
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background: none;
+  }
+
+  .navbar-header {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.32);
+    clear: both;
+    float: none;
+    height: 100px;
+    margin: 0 auto;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 99;
+  }
+
+  header {
+    height: 0px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #cbp-so-scroller {
+    padding-top: 64px;
+  }
+
+  #cbp-so-scroller,header {
+    transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    text-align: center;
+  }
+
+  .outer-push {
+/*		transform:translateX(200px);
+		-moz-transform:translateX(200px);
+		-webkit-transform:translateX(200px);*/;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+
+  }
+
+@media(max-width:610px) {
+	
+
+  section {
+    float: left;
+    width: 100%;
+  }
+
+
+  #map-canvas,.abt-desc-main {
+    display: none;
+  }
+
+ 
+}
+
+@media(max-width:480px) {
+  .social-medias i {
+    margin: 0px;
+  }
+  .abt-item-block > div{
+	  float:left;
+	  clear:none;
+  }
+  .abt-item .item-title {
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+	}
+	.abt-item-block{
+	  width: 86%;
+	}
+}
+
+@media (max-width:767px) and (orientation:portrait) {
+  #intro {
+    background-image: url("../images/banner_mobile.jpg");
+  }
+    .social-medias i{
+	  height:42px;
+	  width:42px;
+  }
+  .banner-main .ban-text-middle{
+	  height:auto;
+	  position:relative;
+  }
+  #intro{
+	  height:auto !important;
+  }
+  .scroll-down{
+	  position:static;
+  }
+
+}
+

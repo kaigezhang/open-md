@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      "vuejs/vue-resource",
+      "E:\\laragon\\www\\huaxi"
+    ]
+  ],
+  "_from": "vuejs/vue-resource",
+  "_id": "vue-resource@0.1.17",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/vue-resource",
+  "_phantomChildren": {},
+  "_requested": {
+    "hosted": {
+      "directUrl": "https://raw.githubusercontent.com/vuejs/vue-resource/master/package.json",
+      "gitUrl": "git://github.com/vuejs/vue-resource.git",
+      "httpsUrl": "git+https://github.com/vuejs/vue-resource.git",
+      "shortcut": "github:vuejs/vue-resource",
+      "ssh": "git@github.com:vuejs/vue-resource.git",
+      "sshUrl": "git+ssh://git@github.com/vuejs/vue-resource.git",
+      "type": "github"
+    },
+    "name": null,
+    "raw": "vuejs/vue-resource",
+    "rawSpec": "vuejs/vue-resource",
+    "scope": null,
+    "spec": "github:vuejs/vue-resource",
+    "type": "hosted"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "git://github.com/vuejs/vue-resource.git#03c7b557020873043277eef417bcc6537839bb5d",
+  "_shasum": "ca84fa7d9ee3b1ab52a45dc97239013464dde232",
+  "_shrinkwrap": null,
+  "_spec": "vuejs/vue-resource",
+  "_where": "E:\\laragon\\www\\huaxi",
+  "bugs": {
+    "url": "https://github.com/vuejs/vue-resource/issues"
+  },
+  "dependencies": {},
+  "description": "A web request service for Vue.js",
+  "devDependencies": {
+    "webpack": "^1.12.3"
+  },
+  "gitHead": "03c7b557020873043277eef417bcc6537839bb5d",
+  "homepage": "https://github.com/vuejs/vue-resource#readme",
+  "keywords": [
+    "mvvm",
+    "resource",
+    "vue",
+    "vuejs"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "name": "vue-resource",
+  "optionalDependencies": {},
+  "readme": "# vue-resource [![npm package](https://img.shields.io/npm/v/vue-resource.svg)](https://www.npmjs.com/package/vue-resource)\r\n\r\nResource plugin for Vue.js.\r\n\r\nThe plugin provides services for making web requests and handle responses using a XMLHttpRequest or JSONP.\r\n\r\n## Setup\r\n\r\n### Webpack/Browserify\r\n\r\nAdd `vue` and `vue-resource` to your `package.json`, then `npm install`, then add these lines in your code:\r\n\r\n```javascript\r\nvar Vue = require('vue');\r\n\r\nVue.use(require('vue-resource'));\r\n```\r\n\r\n### Configuration\r\n\r\nSet default values using the global configuration.\r\n\r\n```javascript\r\nVue.http.options.root = '/root';\r\nVue.http.headers.common['Authorization'] = 'Basic YXBpOnBhc3N3b3Jk';\r\n```\r\n\r\nSet default values inside your Vue component options.\r\n\r\n```javascript\r\nnew Vue({\r\n\r\n    http: {\r\n      root: '/root',\r\n      headers: {\r\n        Authorization: 'Basic YXBpOnBhc3N3b3Jk'\r\n      }\r\n    }\r\n\r\n})\r\n```\r\n\r\n## HTTP\r\n\r\nThe http service can be used globally `Vue.http` or in a Vue instance `this.$http`.\r\n\r\n### Methods\r\n\r\n* `get(url, [data], [success], [options])`\r\n* `post(url, [data], [success], [options])`\r\n* `put(url, [data], [success], [options])`\r\n* `patch(url, [data], [success], [options])`\r\n* `delete(url, [data], [success], [options])`\r\n* `jsonp(url, [data], [success], [options])`\r\n\r\n### Options\r\n\r\n* **url** - `string` - URL to which the request is sent\r\n* **data** - `Object|string` - Data to be sent as the request message data\r\n* **method** - `string` - HTTP method (e.g. GET, POST, ...)\r\n* **params** - `Object` - Parameters object to be appended as GET parameters\r\n* **headers** - `Object` - Headers object to be sent as HTTP request headers\r\n* **success** - `function(data, status, request)` - Callback function to be called when the request finishes\r\n* **error** - `function(data, status, request)` - Callback function to be called when the request fails\r\n* **beforeSend** - `function(request, options)` - Callback function to modify the request object before it is sent\r\n* **emulateHTTP** - `boolean` - Send PUT, PATCH and DELETE requests with a HTTP POST and set the `X-HTTP-Method-Override` header\r\n* **emulateJSON** - `boolean` -  Send request data as `application/x-www-form-urlencoded` content type\r\n* **xhr** - `Object` - Parameters object to be set on the native XHR object\r\n* **jsonp** - `string` - Callback function name in a JSONP request\r\n\r\n### Example\r\n\r\n```javascript\r\nnew Vue({\r\n\r\n    ready: function() {\r\n\r\n      // GET request\r\n      this.$http.get('/someUrl', function (data, status, request) {\r\n\r\n          // set data on vm\r\n          this.$set('someData', data)\r\n\r\n      }).error(function (data, status, request) {\r\n          // handle error\r\n      })\r\n\r\n    }\r\n\r\n})\r\n```\r\n\r\n## Resource\r\n\r\nThe resource service can be used globally `Vue.resource` or in a Vue instance `this.$resource`.\r\n\r\n### Methods\r\n\r\n* `resource(url, [params], [actions], [options])`\r\n\r\n### Default Actions\r\n\r\n```javascript\r\nget: {method: 'GET'},\r\nsave: {method: 'POST'},\r\nquery: {method: 'GET'},\r\nupdate: {method: 'PUT'},\r\nremove: {method: 'DELETE'},\r\ndelete: {method: 'DELETE'}\r\n```\r\n\r\n### Example\r\n```javascript\r\nnew Vue({\r\n\r\n    ready: function() {\r\n\r\n      var resource = this.$resource('someItem/:id');\r\n\r\n      // get item\r\n      resource.get({id: 1}, function (item, status, request) {\r\n          this.$set('item', item)\r\n      })\r\n\r\n      // save item\r\n      resource.save({id: 1}, {item: this.item}, function (data, status, request) {\r\n          // handle success\r\n      }).error(function (data, status, request) {\r\n          // handle error\r\n      })\r\n\r\n      // delete item\r\n      resource.delete({id: 1}, function (data, status, request) {\r\n          // handle success\r\n      }).error(function (data, status, request) {\r\n          // handle error\r\n      })\r\n\r\n    }\r\n\r\n})\r\n```\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/vue-resource.git"
+  },
+  "scripts": {
+    "build": "webpack --config build/webpack.build.config.js"
+  },
+  "version": "0.1.17"
+}
